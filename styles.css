@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#container {
+  border: 2px solid #214a80;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f5f7fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Set the maximum width of the container */
+  width: 80%; /* Set the default width of the container */
+}
+
+h1 {
+  color: #214a80;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="file"] {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #214a80;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#loading {
+  display: none;
+  border: 4px solid #f3f3f3; /* Light gray */
+  border-top: 4px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#result {
+  display: none;
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+#result p {
+  margin: 10px 0;
+}
+
+#downloadLink {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+/* Optional: Style the link as a button */
+#downloadLink {
+  padding: 8px 15px;
+  background-color: #0066cc;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Rest of the CSS styles */
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold; /* Add this line to make the labels bold */
+}
+
+/* Rest of the CSS styles */
+

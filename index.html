@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Compare and Export</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div id="container">
+    <h1>Stock Compare and Export</h1>
+    <label for="shopifyFile">Select Shopify File:</label>
+    <input type="file" id="shopifyFile">
+
+    <button id="downloadVendorButton">Download Vendor File</button>
+
+    <button id="compareExportButton">Compare and Export</button>
+
+    <div id="loading"></div>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
