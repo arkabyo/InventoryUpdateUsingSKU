@@ -20,7 +20,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas requests flask
+          pip install pandas requests
 
       - name: Run Python script
+        env:
+          VENDOR_USERNAME: ${{ secrets.VENDOR_USERNAME }}
+          VENDOR_PASSWORD: ${{ secrets.VENDOR_PASSWORD }}
         run: python app.py
