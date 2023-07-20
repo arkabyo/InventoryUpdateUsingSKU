@@ -19,7 +19,8 @@ jobs:
           python-version: 3.x
 
       - name: Install dependencies
-        run: pip install pandas requests
+        run: |
+          pip install pandas requests flask
 
       - name: Run Python script
         run: python app.py
