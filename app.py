@@ -14,13 +14,31 @@ def login(url, password):
     return response.cookies or response.headers.get('Set-Cookie')
 
 # Function to download the vendor file using session token or cookie
-def download_vendor_file(url, token):
-    headers = {
-        'Cookie': token
-    }
-    response = requests.get(url, headers=headers)
-    response.raise_for_status()
-    return response.text
+def download_vendor_file():
+    vendor_login_url = "https://shrugs.com/exports/export_login"
+    vendor_download_url = "https://shrugs.com/exports/inventory_quantity"
+    vendor_password = "rugsinventory"  # Replace with the actual password
+
+    # Create a session and send a POST request to the login URL
+    session = requests.Session()
+    login_data = {"data[UserExport][password]": vendor_password}
+    login_response = session.post(vendor_login_url, data=login_data)
+
+    # Check if login was successful (optional, for debugging)
+    print("Login Status Code:", login_response.status_code)
+    print("Login Response:", login_response.text)
+
+    # Send a GET request to the vendor download URL
+    download_response = session.get(vendor_download_url)
+
+    # Check if download was successful (optional, for debugging)
+    print("Download Status Code:", download_response.status_code)
+    print("Download Response:", download_response.text)
+
+    # Save the downloaded CSV data to a file
+    with open("vendor_file.csv", "w") as file:
+        file.write(download_response.text)
+
 
 # Process the vendor file data
 def process_vendor_data(vendor_data):
