@@ -25,3 +25,5 @@ jobs:
       run: |
         source myenv/bin/activate
         python app.py
+        
+    #test
